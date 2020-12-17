@@ -81,9 +81,8 @@
     <p id="Output"></p>
 </div>
 
-<div id="page">
-</div>
 <div id="popup"> 
+  <button class="btn btn-primary" onclick="closeIframe()">X</button>
   <iframe id="iframe" height="600px" width="100%" top="30px">
   </iframe>
   
@@ -92,8 +91,7 @@
   <section class="content-section" id="services">
     <div class="container">
       <div class="content-section-heading text-center">
-        <h3 class="text-secondary mb-0">اختر مقالًا</h3>
-        <h2 class="mb-5">اختر مقالًا</h2>
+        <img class="img-fluid" src="img/articles h.jpg">
       </div>
       <div class="row no-gutters">
         <div class="col-sm">
@@ -242,8 +240,12 @@
 
     document.getElementById("popup").showpopup = function() {
   document.getElementById("popup").style.display = "block";
-  document.getElementById('page').className = "darken";
-  document.getElementById("page").style.display = "block";
+  document.getElementById("iframe").style.display = "block";
+}
+
+function ClosePop() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("iframe").style.display = "none";
 }
 
 document.getElementById("2").onclick = function(e) {
@@ -275,13 +277,10 @@ document.getElementById("3").onclick = function(e) {
   document.getElementById("popup").showpopup();
 }
 
-document.getElementById('page').onclick = function() {
-  if(document.getElementById("popup").style.display == "block") {
-    document.getElementById("popup").style.display = "none";
-    document.getElementById("page").style.display = "none";
-    document.getElementById('page').className = "";
-  }
-};
+function closeIframe() {
+    window.parent.ClosePop();
+}
+
 </script> 
 </body>
 
