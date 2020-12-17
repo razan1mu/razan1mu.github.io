@@ -58,19 +58,35 @@
   <header class="masthead d-flex">
     <div class="container text-center my-auto">
       <!--<img class="img-fluid" src="img/header2.jpg" alt="">-->
-      <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+      <button class="btn btn-primary btn-xl" onclick="openForm()">حدد المدة التي ترغب بشغلها</a>
     </div>
     <div class="overlay"></div>
   </header>
 
+  <div class="form-popup" id="myForm">
+    <form class="form-container">
+        <form>
+            <input type="number" id="hours">
+            <label for="hours" >ساعة </label>
+        </form>
+        <form>
+            <input type="number" id="minutes">
+            <label for="minutes">دقيقة </label>
+    </form>
+
+    <button class="btn btn-primary" onclick="countdownTimeStart(); closeForm()">ابدأ</button>
+    </form>
+</div>
+<div class="timer">
+    <p id="Output"></p>
+</div>
  
 
   <!-- services -->
   <section class="content-section" id="services">
     <div class="container">
       <div class="content-section-heading text-center">
-        <h3 class="text-secondary mb-0">اختر كيف تريد شغل وقتك</h3>
-        <h2 class="mb-5">اختر كيف تريد شغل وقتك</h2>
+        <img class="img-fluid" src="img/main h.jpg">
       </div>
       <div class="row no-gutters">
         <div class="col-sm">
@@ -125,23 +141,12 @@
   </section>
 
 
-  <!-- Footer -->
   <footer class="footer text-center" id="contact">
     <div class="container">
       <ul class="list-inline mb-5">
         <li class="list-inline-item">
-          <a class="social-link rounded-circle text-white mr-3" href="#!">
-            <i class="icon-social-facebook"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="social-link rounded-circle text-white mr-3" href="#!">
+          <a class="social-link rounded-circle text-white mr-3" href="https://twitter.com/_2_to_2_">
             <i class="icon-social-twitter"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="social-link rounded-circle text-white" href="#!">
-            <i class="icon-social-github"></i>
           </a>
         </li>
       </ul>
@@ -165,5 +170,49 @@
   <script src="js/stylish-portfolio.min.js"></script>
 
 </body>
+
+<script>
+  function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+
+    function countdownTimeStart(){
+        var minutes = document.getElementById("minutes").value;
+        var hours = document.getElementById("hours").value;
+        var hoursInS = hours * 3600;
+        var minutesIns = minutes * 60;
+        var timeInSeconds = hoursInS + minutesIns;
+
+        var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+
+        function timer(){
+            // Update the count down every 1 second
+            timeInSeconds=timeInSeconds-1;
+            remainingMinutes = Math.floor(timeInSeconds/60);
+            remainingHours = Math.floor(timeInSeconds/3600);
+            remainingSeconds = Math.floor(timeInSeconds-((remainingMinutes*60) + (remainingHours*3600)));
+
+            if (timeInSeconds <= 0){
+                clearInterval(counter);
+                alert("انتهى الوقت الذي حددته! بإمكانك إعادة تعيين الوقت");
+                return;
+            }
+            else if (remainingHours >= 1){
+                document.getElementById("Output").innerHTML= remainingHours + ":"+remainingMinutes + ":" + remainingSeconds;
+            }
+
+            else if (remainingMinutes >= 1){
+                document.getElementById("Output").innerHTML= "00:"+remainingMinutes + ":" + remainingSeconds
+            }
+            else if (remainingSeconds >= 0){
+                document.getElementById("Output").innerHTML= "00:00:" + remainingSeconds;
+            }
+        }
+    }
+</script>
 
 </html>
