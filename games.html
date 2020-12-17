@@ -85,6 +85,7 @@
 <div id="page">
 </div>
 <div id="popup"> 
+  <button class="btn btn-primary" onclick="closeIframe()">X</button>
   <iframe id="iframe" height="600px" width="100%"></iframe>
 </div>
   <!-- services -->
@@ -241,8 +242,13 @@
 
     document.getElementById("popup").showpopup = function() {
   document.getElementById("popup").style.display = "block";
-  document.getElementById('page').className = "darken";
-  document.getElementById("page").style.display = "block";
+}
+
+function ClosePop() {
+    var layer = document.getElementById("popup");
+    var iframe = document.getElementById("iframe");
+    document.body.removeChild(layer); // remove layer
+    document.body.removeChild(iframe); // remove div
 }
 
 document.getElementById("2").onclick = function(e) {
@@ -278,6 +284,11 @@ document.getElementById('page').onclick = function() {
     document.getElementById('page').className = "";
   }
 };
+
+function closeIframe() {
+    window.parent.ClosePop();
+}
+
 </script> 
 </body>
 
