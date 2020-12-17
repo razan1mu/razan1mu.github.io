@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>مقالات</title>
+  <link rel="icon" href="img/icon.jpg" />
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#page-top">الرئيسية</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#services">الخيارات</a>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="podcasts.html">السمعيات</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="articles.html">المقالات</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="games.html">الألعاب</a>
+        </li>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#about">عنّا</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#contact">تواصل معنا</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <!--<img class="img-fluid" src="img/header2.jpg" alt="">-->
+      <button class="btn btn-primary btn-xl" onclick="openForm()">حدد المدة التي ترغب بشغلها</a>
+    </div>
+    <div class="overlay"></div>
+  </header>
+
+  <div class="form-popup" id="myForm">
+    <form class="form-container">
+        <form>
+            <input type="number" id="hours">
+            <label for="hours" >ساعة </label>
+        </form>
+        <form>
+            <input type="number" id="minutes">
+            <label for="minutes">دقيقة </label>
+    </form>
+
+    <button class="btn btn-primary" onclick="countdownTimeStart(); closeForm()">ابدأ</button>
+    </form>
+</div>
+<div class="timer">
+    <p id="Output"></p>
+</div>
+
+<div id="page">
+</div>
+<div id="popup"> 
+  <iframe id="iframe" height="600px" width="100%" top="30px">
+  </iframe>
+  
+</div>
+  <!-- services -->
+  <section class="content-section" id="services">
+    <div class="container">
+      <div class="content-section-heading text-center">
+        <h3 class="text-secondary mb-0">اختر مقالًا</h3>
+        <h2 class="mb-5">اختر مقالًا</h2>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-sm">
+          <a class="portfolio-item" href="" id="2">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">الترجمة الدلالية والترجمة التواصلية</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/2.png" alt="">
+          </a>
+        </div>
+        <div class="col-sm">
+          <a class="portfolio-item" href="" id="1">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">حتى لا تكون الدورات التدريبية ضياع وقت ومال</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/1.png" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="row no-gutters" id="4">
+        <div class="col-sm">
+          <a class="portfolio-item" href="" >
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">مقال عشوائي</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/random.png" alt="">
+          </a>
+        </div>
+        <div class="col-sm">
+          <a class="portfolio-item" href="" id="3">
+              <div class="caption">
+                <div class="caption-content">
+                  <div class="h2"> التوحد والسياحة: 10 نصائح حول الاستعداد لرحلة مع طفل توحدي</div>   
+              </div>
+            </div>
+            <img class="img-fluid" src="img/3.png" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="content-section bg-light" id="about">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
+          <p class="lead mb-5">This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
+            <a href="https://unsplash.com/">Unsplash</a>!</p>
+          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer text-center" id="contact">
+    <div class="container">
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#!">
+            <i class="icon-social-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#!">
+            <i class="icon-social-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="#!">
+            <i class="icon-social-github"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright &copy; 222 2020</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/stylish-portfolio.min.js"></script>
+
+
+  <script>  
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+
+    function countdownTimeStart(){
+        var minutes = document.getElementById("minutes").value;
+        var hours = document.getElementById("hours").value;
+        var hoursInS = hours * 3600;
+        var minutesIns = minutes * 60;
+        var timeInSeconds = hoursInS + minutesIns;
+
+        var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+
+        function timer(){
+            // Update the count down every 1 second
+            timeInSeconds=timeInSeconds-1;
+            remainingMinutes = Math.floor(timeInSeconds/60);
+            remainingHours = Math.floor(timeInSeconds/3600);
+            remainingSeconds = Math.floor(timeInSeconds-((remainingMinutes*60) + (remainingHours*3600)));
+
+            if (timeInSeconds <= 0){
+                clearInterval(counter);
+                alert("انتهى الوقت الذي حددته! بإمكانك إعادة تعيين الوقت");
+                return;
+            }
+            else if (remainingHours >= 1){
+                document.getElementById("Output").innerHTML= remainingHours + ":"+remainingMinutes + ":" + remainingSeconds;
+            }
+
+            else if (remainingMinutes >= 1){
+                document.getElementById("Output").innerHTML= "00:"+remainingMinutes + ":" + remainingSeconds
+            }
+            else if (remainingSeconds >= 0){
+                document.getElementById("Output").innerHTML= "00:00:" + remainingSeconds;
+            }
+        }
+    }
+
+    document.getElementById("popup").showpopup = function() {
+  document.getElementById("popup").style.display = "block";
+  document.getElementById('page').className = "darken";
+  document.getElementById("page").style.display = "block";
+}
+
+document.getElementById("2").onclick = function(e) {
+  e.preventDefault(); 
+  document.getElementById('iframe').src = "https://ziid.net/online-business/semantic-translation-and-communication/";
+  document.getElementById("popup").showpopup();
+}
+
+document.getElementById("1").onclick = function(e) {
+  e.preventDefault();
+  document.getElementById('iframe').src = "https://ziid.net/self-development/workshops/";
+  document.getElementById("popup").showpopup();
+}
+
+document.getElementById("4").onclick = function(e) {
+  e.preventDefault();
+  document.getElementById('iframe').src = "https://ziid.net/tourism/autism-and-holidays/";
+  document.getElementById("popup").showpopup();
+}
+
+document.getElementById("3").onclick = function(e) {
+  e.preventDefault();
+  var arr = ["https://ziid.net/nonprofit/how-does-plastic-damage-the-environment/",
+            "https://ziid.net/family/how-do-i-adopt-an-eco-friendly-lifestyle/",
+            "https://ziid.net/self-development/workshops/",
+            "https://ziid.net/online-business/semantic-translation-and-communication/",
+            "https://ziid.net/tourism/autism-and-holidays/"]; 
+  document.getElementById('iframe').src = arr[Math.floor(Math.random() * arr.length)];
+  document.getElementById("popup").showpopup();
+}
+
+document.getElementById('page').onclick = function() {
+  if(document.getElementById("popup").style.display == "block") {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("page").style.display = "none";
+    document.getElementById('page').className = "";
+  }
+};
+</script> 
+</body>
+
+</html>
