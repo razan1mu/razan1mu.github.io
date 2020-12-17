@@ -82,8 +82,6 @@
     <p id="Output"></p>
 </div>
 
-<div id="page">
-</div>
 <div id="popup"> 
   <button class="btn btn-primary" onclick="closeIframe()">X</button>
   <iframe id="iframe" height="600px" width="100%"></iframe>
@@ -275,14 +273,6 @@ document.getElementById("3").onclick = function(e) {
   document.getElementById('iframe').src = arr[Math.floor(Math.random() * arr.length)];
   document.getElementById("popup").showpopup();
 }
-
-document.getElementById('page').onclick = function() {
-  if(document.getElementById("popup").style.display == "block") {
-    document.getElementById("popup").style.display = "none";
-    document.getElementById("page").style.display = "none";
-    document.getElementById('page').className = "";
-  }
-};
 
 function closeIframe() {
     window.parent.ClosePop();
