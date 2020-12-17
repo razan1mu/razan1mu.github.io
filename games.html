@@ -242,13 +242,12 @@
 
     document.getElementById("popup").showpopup = function() {
   document.getElementById("popup").style.display = "block";
+  document.getElementById("iframe").style.display = "block";
 }
 
 function ClosePop() {
-    var layer = document.getElementById("popup");
-    var iframe = document.getElementById("iframe");
-    document.body.removeChild(layer); // remove layer
-    document.body.removeChild(iframe); // remove div
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("iframe").style.display = "none";
 }
 
 document.getElementById("2").onclick = function(e) {
